@@ -1,0 +1,189 @@
+@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;700&display=swap");
+
+body {
+  margin: 0;
+  background-color: rgb(218, 238, 255);
+}
+
+// 1. Spinner
+
+.container {
+  display: flex;
+  height: 100vh;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  animation: color 2s linear infinite;
+  animation-direction: alternate;
+}
+
+.gif {
+  border-radius: 50%;
+}
+
+.spinner {
+  height: 500px;
+  width: 500px;
+  border: 30px solid rgba(194, 194, 194, 0.479);
+  position: absolute;
+  border-radius: 50%;
+  border-bottom: 30px dotted royalblue;
+  box-shadow: 0 0 15px rgb(58, 58, 58);
+  animation: loader 2.5s linear infinite;
+}
+
+@keyframes loader {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes color {
+  0% {
+    background-color: aqua;
+  }
+  20% {
+    background-color: greenyellow;
+  }
+  40% {
+    background-color: lightcoral;
+  }
+  60% {
+    background-color: lightseagreen;
+  }
+  80% {
+    background-color: rgb(255, 255, 32);
+  }
+  100% {
+    background-color: lightsalmon;
+  }
+}
+
+// 2. Header color & screen change
+
+@mixin desktop {
+  @media (min-width: 1024px) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media (min-width: 481px) and (max-width: 1023px) {
+    @content;
+  }
+}
+
+@mixin phone {
+  @media (max-width: 480px) {
+    @content;
+  }
+}
+
+.header_container {
+  display: flex;
+  width: 100%;
+  height: 100vh;
+  align-items: center;
+  justify-content: center;
+}
+
+.header {
+  @include desktop {
+    font-size: 3rem;
+  }
+  @include tablet {
+    font-size: 2rem;
+  }
+  @include phone {
+    font-size: 1rem;
+  }
+  font-family: "Oswald", sans-serif;
+  animation: header_color 2s linear infinite;
+  animation-direction: alternate;
+}
+
+@keyframes header_color {
+  0% {
+    color: greenyellow;
+  }
+  33% {
+    color: lightblue;
+  }
+  66% {
+    color: rgb(201, 83, 83);
+  }
+  100% {
+    color: aqua;
+  }
+}
+
+// 3. Shadow Elements
+
+.el_container {
+  display: flex;
+  width: 100%;
+  height: 100vh;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.shadow1 {
+  width: 300px;
+  height: 300px;
+  background-image: url(https://store-images.s-microsoft.com/image/apps.49569.13510798886705778.ceda6963-c77c-4c5f-bd4b-a07ce3a6fdcb.370d19eb-ac39-438f-aeee-120a7753169a);
+  border-radius: 10px;
+  box-shadow: -15px 15px 20px rgb(131, 131, 131);
+}
+
+.shadow2 {
+  width: 300px;
+  height: 300px;
+  background-image: url(https://i.icanvas.com/list-square/mountains-WAC6940.jpg);
+  border-radius: 15px;
+  box-shadow: 15px -15px 20px rgb(131, 131, 131);
+}
+
+// 4. Main
+
+.hw_container {
+  display: flex;
+  font-family: "Oswald", sans-serif;
+  width: 100%;
+  height: 100vh;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.links {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.link {
+  width: 200px;
+  background-color: rgb(75, 218, 146);
+  text-align: center;
+  padding: 10px 0;
+  text-decoration: none;
+  color: rgb(56, 68, 78);
+  border-radius: 5px;
+  transition: 0.5s;
+}
+
+.link:hover {
+  background-color: rgb(126, 235, 180);
+  color: black;
+  box-shadow: 2px 5px 10px gray;
+}
+
+marquee {
+  height: 100vh;
+}
